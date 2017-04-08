@@ -1,13 +1,46 @@
 <scenario>
-  <name>test</name>
+  <name>test.scenario</name>
   <maxRuleFirings>100000</maxRuleFirings>
   <globals/>
-  <fixtures/>
+  <fixtures>
+    <fact-data>
+      <type>interestratesDO</type>
+      <fieldData>
+        <field-data>
+          <name>amount</name>
+          <value>500</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>months</name>
+          <value>10</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>ir</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <execution-trace/>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>rate</fieldName>
+          <expected>3</expected>
+          <operator>==</operator>
+          <nature>0</nature>
+        </expect-field>
+      </fieldValues>
+      <name>ir</name>
+      <anonymous>false</anonymous>
+    </expect-fact>
+  </fixtures>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>com.acme.dept.interestrates.acmebank_interestrates</packageName>
   <imports>
     <imports/>
   </imports>
-  <ksessions/>
+  <ksessions>
+    <string>defaultKieSession</string>
+  </ksessions>
 </scenario>
