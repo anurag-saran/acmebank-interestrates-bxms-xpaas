@@ -1,0 +1,9 @@
+<batch-execution>
+  <insert out-identifier="interestratedo">
+    <com.acme.dept.interestrates.acmebank_interestrates.interestratesDO>
+      <months>12</months>
+      <amount>5000</amount>
+    <com.acme.dept.interestrates.acmebank_interestrates.interestratesDO>
+  </insert>
+  <fire-all-rules />
+</batch-execution>

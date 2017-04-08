@@ -1,0 +1,16 @@
+{
+  "commands": [
+    {
+      "insert": {
+        "object": {
+          "com.acme.dept.interestrates.acmebank_interestrates.interestratesDO": {
+            "months": 12,
+            "amount": 50000
+          }
+        },
+        "out-identifier": "interestrate",
+        "return-object": true
+      }
+    }
+  ]
+}

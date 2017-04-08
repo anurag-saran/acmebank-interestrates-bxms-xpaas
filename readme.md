@@ -36,13 +36,13 @@ oc new-app --template=decisionserver63-basic-s2i -p KIE_SERVER_PASSWORD=$kieserv
 oc get routes
 export interestratequote_app=<URL of the policyquote app route>
 
-export interestratequote_app=interestrates-bxms-xpaas-policyquote.apps.anuragsdemo.com
+export interestratequote_app=interestrates-acmebank-interestrates-bxms-xpaas.apps.anuragsdemo.com
 export kieserver_password=kieserver1!
 ```
 
 ## To check the health of the server:
 ```
-curl -X GET -H "Accept: application/json" --user kieserver:$kieserver_password "$interestratequote_app/kie-server/services/rest/server"
+curl -X GET -H "Accept: application/json" --user kieserver:$kieserver_password interestrates-acmebank-interestrates-bxms-xpaas.apps.anuragsdemo.com/kie-server/services/rest/server
 ```
 
 ## To check which KIE containers are deployed on the server.
@@ -53,7 +53,9 @@ curl -X GET -H "Accept: application/json" --user kieserver:$kieserver_password "
 
 ## Make a POST Call
 ```
-curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" --user kieserver:$kieserver_password -d @policyquote-payload.json "$interestratequote_app/kie-server/services/rest/server/containers/instances/policyquote"
+curl -s -X POST -H "Content-Type: application/xml" -H "Accept: application/json" --user kieserver:$kieserver_password -d @interestrate-payload.xml "$interestratequote_app/kie-server/services/rest/server/containers/instances/399fe98666d88e0301aff24f7a27ec63"
+
+curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" --user kieserver:$kieserver_password -d @interestrate1-payload.json "$interestratequote_app/kie-server/services/rest/server/containers/instances/399fe98666d88e0301aff24f7a27ec63"
 ```
 
 ## To filter out the price field, use grep:
